@@ -7,26 +7,29 @@ const features = [
     cta: "Get Started",
     imgUrl:
       "https://images.unsplash.com/photo-1642583980275-876450a71529?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzIzfHxibGVuZGVyJTIwM2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    comingSoon: false,
   },
   {
     title: "Open Source",
     cta: "Get Started",
     imgUrl:
-      "https://images.unsplash.com/photo-1639548206755-b20081a7cadc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjEwfHxibGVuZGVyJTIwM2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1653200256772-06b9e87b40f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzV8fGJsZW5kZXIlMjAzZCUyMHRveXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    comingSoon: true,
   },
   {
     title: "E-Commerce",
     cta: "Get Started",
     imgUrl:
-      "https://images.unsplash.com/photo-1639548206755-b20081a7cadc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjEwfHxibGVuZGVyJTIwM2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1641563817292-d2085b953e78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGJsZW5kZXIlMjAzZCUyMHRveXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    comingSoon: true,
   },
 ];
 
 const Features = () => {
   return (
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-5xl items-center justify-center text-[#a9adc1] ">
-        Services 🚀
+      <h2 className="text-5xl place-content-center text-[#a9adc1] ">
+        Services🚀
       </h2>
       <h2 className="text-2xl items-center justify-center text-gray-300">
         Defining what we offer!
@@ -41,6 +44,11 @@ const Features = () => {
               <h2 className="text-4xl font-semibold text-[#a9adc1] my-5">
                 {feature.title}
               </h2>
+              {features.comingSoon && (
+                <p className="absolute top-0 -translate-y-1/2 bg-cyan-500 px-3 py-0.5 text-sm font-semibold tracking-wide text-white shadow-md rounded-full">
+                  Coming Soon
+                </p>
+              )}
               <button className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                 {feature.cta}
               </button>
@@ -48,8 +56,8 @@ const Features = () => {
                 className="rounded-lg mt-4"
                 src={feature.imgUrl}
                 alt="feature-image"
-                width={200}
-                height={200}
+                width={500}
+                height={500}
               />
             </div>
           );
